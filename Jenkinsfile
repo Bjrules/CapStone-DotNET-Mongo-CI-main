@@ -1,5 +1,4 @@
 pipeline {
-
     agent any
     
     environment {
@@ -22,7 +21,7 @@ pipeline {
                 sh 'dotnet build'
             }
         }
-        stage('trivy FS Scan') {
+        stage('Trivy FS Scan') {
             steps {
               sh 'trivy fs --format table -o trivy-fs-report.html .'
             }
@@ -60,7 +59,7 @@ pipeline {
             }
         }
         
-        stage('trivy Image Scan') {
+        stage('Trivy Image Scan') {
             steps {
               sh 'trivy image --format table -o trivy-image-report.html bjrules/noteapp:$IMAGE_TAG'
             }
