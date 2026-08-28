@@ -34,7 +34,7 @@ pipeline {
         
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('sonar') {
+                withSonarQubeEnv('Sonar-Server') {
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=NoteApp \
                             -Dsonar.projectKey=NoteApp '''
                 }
@@ -53,7 +53,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh "docker build -t adijaiswal/noteapp:$IMAGE_TAG ."
+                        sh "docker build -t bjrules/noteapp:$IMAGE_TAG ."
                     }
                 }
             }
@@ -61,7 +61,7 @@ pipeline {
         
         stage('trivy Image Scan') {
             steps {
-              sh 'trivy image --format table -o trivy-image-report.html adijaiswal/noteapp:$IMAGE_TAG'
+              sh 'trivy image --format table -o trivy-image-report.html bjrules/noteapp:$IMAGE_TAG'
             }
         }
         
@@ -69,7 +69,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred') {
-                        sh "docker push adijaiswal/noteapp:$IMAGE_TAG"
+                        sh "docker push bjrules/noteapp:$IMAGE_TAG"
                     }
                 }
             }
@@ -78,14 +78,14 @@ pipeline {
             steps {
                 script {
                     cleanWs()
-                    withCredentials([usernamePassword(credentialsId: 'git-token', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: 'git-cred', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         sh '''
                             # Clone the CD Repo
-                            git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/jaiswaladi246/Capstone-DotNET-Mongo-CD.git
+                            git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/Bjrules/Capstone-DotNET-Mongo-CD-main.git
                             
                             # Update the tag in manifest
-                            cd Capstone-DotNET-Mongo-CD
-                            sed -i "s|adijaiswal/noteapp:.*|adijaiswal/noteapp:${IMAGE_TAG}|" Manifest/manifest.yaml
+                            cd Capstone-DotNET-Mongo-CD-main
+                            sed -i "s|bjrules/noteapp:.*|bjrules/noteapp:${IMAGE_TAG}|" Manifest/manifest.yaml
                             
                             # Confirm Changes
                             echo "Updated manifest file contents:"
@@ -129,9 +129,9 @@ pipeline {
             emailext (
                 subject: "${jobName} - Build ${buildNumber} - ${pipelineStatus.toUpperCase()}",
                 body: body,
-                to: '567adddi.jais@gmail.com',
-                from: 'jaiswaladi246@gmail.com',
-                replyTo: 'jenkins@devopsshack.com',
+                to: 'rulesxx@gmail.com',
+                from: 'justbj@live.com',
+                replyTo: 'justbj@live.com',
                 mimeType: 'text/html',
                
             )
