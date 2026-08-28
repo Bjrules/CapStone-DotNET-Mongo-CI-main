@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'git-token', url: 'https://github.com/jaiswaladi246/Capstone-DotNET-Mongo-CI.git'
+                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/Bjrules/CapStone-DotNET-Mongo-CI-main.git'
             }
         }
         stage('Gitleaks Scan') {
