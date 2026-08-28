@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Trivy FS Scan') {
             steps {
-              sh 'trivy fs --format table -o trivy-fs-report.html .' # Scan the File system
+              sh 'trivy fs --format table -o trivy-fs-report.html .' #Scan the File system
             }
         }
         stage('Unit Testing') {
@@ -62,7 +62,7 @@ pipeline {
         
         stage('Trivy Image Scan') {
             steps {
-              sh 'trivy image --format table -o trivy-image-report.html bjrules/noteapp:$IMAGE_TAG' # Scan the Docker Image
+              sh 'trivy image --format table -o trivy-image-report.html bjrules/noteapp:$IMAGE_TAG' #Scan the Docker Image
             }
         }
         
