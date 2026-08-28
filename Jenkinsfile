@@ -53,7 +53,7 @@ pipeline {
         stage('Build Image & Tag Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred') {
+                    withDockerRegistry(credentialsId: 'docker-cied') {
                         sh "docker build -t bjrules/noteapp:$IMAGE_TAG ."
                     }
                 }
