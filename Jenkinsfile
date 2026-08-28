@@ -131,7 +131,7 @@ pipeline {
                 body: body,
                 to: 'rulesxx@gmail.com',
                 from: 'justbj@live.com',
-                replyTo: 'justbj@live.com',
+                replyTo: 'rulesxx@gmail.com',
                 mimeType: 'text/html',
                
             )
