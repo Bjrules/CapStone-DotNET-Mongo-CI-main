@@ -6,3 +6,4 @@ ALL TOOLS PROJECT: This is a Production Grade DevSecOps Project
 Documentation coming Soon
 
 added resource serviceaccount to role in RBAC
+ if certificate status remain false till about 15minute kindly delete it and is will automaticlly create a new one
