@@ -5,5 +5,7 @@ ALL TOOLS PROJECT: This is a Production Grade DevSecOps Project
 
 ![alt text](<FLow Diagaram.png>)
 
+- set up kubernetes
+
 added resource serviceaccount to role in RBAC
  if certificate status remain false till about 15minute kindly delete it and is will automatically create a new one and pissibly set it's status to true
