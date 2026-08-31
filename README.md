@@ -1,6 +1,6 @@
 # CapStone-DotNET-Mongo-CI-main
 #### Kindly see the Capstone-DotNET-Mongo-CD-main
-ALL TOOLS PROJECT: This is a Production Grade DevSecOps Project 
+ALL TOOLS PROJECT: This is a Production Grade DevSecOps Project with full Automation
 
 
 ![alt text](<FLow Diagaram.png>)
