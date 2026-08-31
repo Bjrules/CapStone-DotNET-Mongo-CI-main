@@ -12,5 +12,8 @@ ALL TOOLS PROJECT: This is a Production Grade DevSecOps Project
 - Setup and Configure Sonarqube with PostgreSQl using helm 
 - install mongodb.
 
+Create jenkins on another EC2 to perform CI and CD in the Capstone-DotNET-Mongo-CD-main repo
+create webhook to trigger build for the CI job and for the CD job since the CI updates the CD repo
+
 added resource serviceaccount to role in RBAC
  if certificate status remain false till about 15minute kindly delete it and is will automatically create a new one and pissibly set it's status to true
