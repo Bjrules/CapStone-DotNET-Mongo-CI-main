@@ -2,6 +2,9 @@
 #### Kindly see the Capstone-DotNET-Mongo-CD-main
 ALL TOOLS PROJECT: This is a Production Grade DevSecOps Project with full Automation
 
+1. See project image below
+2. See jenkinsfiles in both the CapStone-DotNET-Mongo-CI-main and the Capstone-DotNET-Mongo-CD-main
+3. Refer to the project setup files
 
 ![alt text](<FLow Diagaram.png>)
 - [x] create Two Instances (1) for EKS and Config and setup (2) Jenkins for CICD 
