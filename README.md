@@ -4,7 +4,7 @@ ALL TOOLS PROJECT: This is a Production Grade DevSecOps Project
 
 
 ![alt text](<FLow Diagaram.png>)
-
+- [x] create Two Instances (1) for EKS and Config and setup (2) Jenkins for CICD 
 - Set up kubernetes (Terraform with ebs-csi-driver, awscli, kubectl, eksctl, helm)
 - Deploy StorageClass sc.yaml 
 - Setup and configure HashiCorp Vault inside kubernetes using helm to handle Secrets (In this project it was mongodb's connection string)
